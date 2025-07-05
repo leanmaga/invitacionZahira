@@ -193,8 +193,8 @@ export default function RSVPSection() {
             Confirma tu Asistencia
           </h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Por favor, confirma tu asistencia antes del 1 de abril para que
-            podamos preparar todo perfectamente para ti.
+            Por favor, confirma tu asistencia lo antes posible para que podamos
+            preparar todo perfectamente para ti.
           </p>
         </motion.div>
 
@@ -345,25 +345,6 @@ export default function RSVPSection() {
               )}
             </motion.button>
           </form>
-
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.3 }}
-            viewport={{ once: true }}
-            className="mt-8 p-6 bg-gradient-to-r from-gold-100 to-gold-200 rounded-2xl"
-          >
-            <p className="text-gray-700 text-center">
-              <strong>Fecha límite para confirmar:</strong> 30 de Julio, 2025
-              <br />
-              Para preguntas, contacta a: +54 11 2776-4823
-              <br />
-              <span className="text-sm text-gray-600">
-                📱 Tu confirmación se enviará automáticamente por WhatsApp y se
-                guardará en nuestro sistema
-              </span>
-            </p>
-          </motion.div>
         </motion.div>
       </div>
     </section>

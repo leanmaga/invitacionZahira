@@ -4,6 +4,13 @@ import { motion } from "framer-motion";
 import { MapPin, Navigation, Phone, Clock } from "lucide-react";
 
 export default function LocationSection() {
+  const WHATSAPP_NUMBER = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER;
+  // ⚠️ Validación de variables de entorno
+  if (!WHATSAPP_NUMBER) {
+    console.error(
+      "❌ NEXT_PUBLIC_WHATSAPP_NUMBER no está configurado en .env.local"
+    );
+  }
   return (
     <section id="location" className="py-20 bg-white">
       <div className="max-w-6xl mx-auto px-4">
@@ -60,11 +67,7 @@ export default function LocationSection() {
                     <h4 className="font-semibold text-gray-800 mb-1">
                       Contacto
                     </h4>
-                    <p className="text-gray-600">
-                      +52 (555) 123-4567
-                      <br />
-                      eventos@crystalsalon.com
-                    </p>
+                    <p className="text-gray-600">{WHATSAPP_NUMBER}</p>
                   </div>
                 </motion.div>
 

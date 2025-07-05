@@ -13,6 +13,13 @@ import {
 
 export default function Footer() {
   const [mounted, setMounted] = useState(false);
+  const WHATSAPP_NUMBER = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER;
+  // ⚠️ Validación de variables de entorno
+  if (!WHATSAPP_NUMBER) {
+    console.error(
+      "❌ NEXT_PUBLIC_WHATSAPP_NUMBER no está configurado en .env.local"
+    );
+  }
 
   // Solo ejecutar en el cliente para evitar errores de hidratación
   useEffect(() => {
@@ -72,7 +79,7 @@ export default function Footer() {
               Información de Contacto
             </h3>
             <div className="space-y-2 text-gray-300">
-              <p>+54 9 11 3044-1529</p>
+              <p>{WHATSAPP_NUMBER || "+54 9 11 2776-4823"}</p>
             </div>
           </motion.div>
 
