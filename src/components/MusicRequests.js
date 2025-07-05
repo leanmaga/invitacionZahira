@@ -431,24 +431,6 @@ export default function MusicRequests() {
                 ))}
               </div>
             </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.3 }}
-              viewport={{ once: true }}
-              className="p-6 bg-gradient-to-r from-gold-100 to-gold-200 rounded-2xl"
-            >
-              <h4 className="font-semibold text-gray-800 mb-2 flex items-center gap-2">
-                <Music className="w-5 h-5 text-gold-600" />
-                Nota Musical
-              </h4>
-              <p className="text-gray-700">
-                Nuestro DJ profesional se encargará de crear el ambiente
-                perfecto mezclando tus solicitudes con música tradicional y
-                moderna para que todos disfruten.
-              </p>
-            </motion.div>
           </div>
         </div>
       </div>

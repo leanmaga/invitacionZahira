@@ -77,7 +77,7 @@ export default function HeroSection() {
         >
           <Crown className="w-16 h-16 mx-auto text-gold-500 mb-4 animate-float" />
           <h1 className="font-elegant text-6xl md:text-8xl lg:text-9xl font-bold text-quince-600 mb-4">
-            Isabella
+            Zahira
           </h1>
           <div className="flex items-center justify-center gap-4 mb-6">
             <div className="h-px bg-gradient-to-r from-transparent via-quince-300 to-transparent w-20"></div>
@@ -107,10 +107,9 @@ export default function HeroSection() {
           className="glass rounded-2xl p-8 max-w-md mx-auto backdrop-blur-md"
         >
           <div className="text-2xl md:text-3xl font-bold text-quince-600 mb-2">
-            15 de Abril, 2024
+            06 de Diciembre, 2025
           </div>
-          <div className="text-lg text-gray-700 mb-4">7:00 PM</div>
-          <div className="text-gray-600">Salón de Eventos Crystal</div>
+          <div className="text-lg text-gray-700 mb-4">10:00 AM a 19:00 PM</div>
         </motion.div>
 
         <motion.div

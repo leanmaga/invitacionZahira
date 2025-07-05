@@ -342,7 +342,7 @@ export default function AdminDashboard() {
               <Crown className="w-6 h-6 sm:w-8 sm:h-8 text-quince-500 flex-shrink-0" />
               <div className="min-w-0">
                 <h1 className="text-lg sm:text-xl font-semibold text-gray-900 truncate">
-                  Admin - Isabella
+                  Admin - Zahira
                 </h1>
                 <p className="text-xs sm:text-sm text-gray-600">
                   Gestión de confirmaciones

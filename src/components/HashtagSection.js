@@ -6,7 +6,7 @@ import { Camera, Hash, Instagram, Copy, Check } from "lucide-react";
 
 export default function HashtagSection() {
   const [copied, setCopied] = useState(false);
-  const hashtag = "#Isabella15Años";
+  const hashtag = "#Zahira15Años";
 
   const copyHashtag = () => {
     navigator.clipboard.writeText(hashtag);
@@ -21,8 +21,8 @@ export default function HashtagSection() {
       icon: Camera,
     },
     {
-      title: "Etiqueta a Isabella",
-      description: "@isabella_quince para que pueda ver y compartir tus fotos",
+      title: "Etiqueta a Zahira",
+      description: "@Zahira_quince para que pueda ver y compartir tus fotos",
       icon: Instagram,
     },
     {
@@ -122,51 +122,6 @@ export default function HashtagSection() {
             </motion.div>
           ))}
         </div>
-
-        {/* Photo Contest */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          className="glass rounded-3xl p-6 sm:p-8 md:p-12 text-center"
-        >
-          <Camera className="w-12 h-12 sm:w-16 sm:h-16 mx-auto text-gold-500 mb-4 sm:mb-6" />
-          <h3 className="font-serif text-2xl sm:text-3xl font-bold text-gray-800 mb-3 sm:mb-4">
-            Concurso de Fotografía
-          </h3>
-          <p className="text-lg sm:text-xl text-gray-600 mb-6 sm:mb-8 max-w-3xl mx-auto">
-            ¡Las mejores fotos con nuestro hashtag serán premiadas! Al final de
-            la noche, anunciaremos al ganador del mejor momento capturado.
-          </p>
-
-          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 max-w-4xl mx-auto">
-            <div className="p-4 sm:p-6 bg-gradient-to-br from-gold-100 to-gold-200 rounded-2xl">
-              <h4 className="font-bold text-gray-800 mb-2 text-sm sm:text-base">
-                🥇 Primer Lugar
-              </h4>
-              <p className="text-gray-700 text-sm sm:text-base">
-                Sesión de fotos profesional
-              </p>
-            </div>
-            <div className="p-4 sm:p-6 bg-gradient-to-br from-quince-100 to-quince-200 rounded-2xl">
-              <h4 className="font-bold text-gray-800 mb-2 text-sm sm:text-base">
-                🥈 Segundo Lugar
-              </h4>
-              <p className="text-gray-700 text-sm sm:text-base">
-                Album de fotos personalizado
-              </p>
-            </div>
-            <div className="p-4 sm:p-6 bg-gradient-to-br from-purple-100 to-purple-200 rounded-2xl sm:col-span-2 md:col-span-1">
-              <h4 className="font-bold text-gray-800 mb-2 text-sm sm:text-base">
-                🥉 Tercer Lugar
-              </h4>
-              <p className="text-gray-700 text-sm sm:text-base">
-                Marco de fotos elegante
-              </p>
-            </div>
-          </div>
-        </motion.div>
       </div>
     </section>
   );

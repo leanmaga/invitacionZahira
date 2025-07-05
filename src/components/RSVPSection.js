@@ -49,7 +49,7 @@ export default function RSVPSection() {
     const guestText =
       data.guests === "1" ? "Solo yo" : `${data.guests} personas`;
 
-    let message = `🎉 *CONFIRMACIÓN DE ASISTENCIA - QUINCEAÑERA ISABELLA*\n\n`;
+    let message = `🎉 *CONFIRMACIÓN DE ASISTENCIA - QUINCEAÑERA Zahira*\n\n`;
     message += `👤 *Nombre:* ${data.name}\n`;
     message += `📧 *Email:* ${data.email}\n`;
     message += `📱 *Teléfono:* ${data.phone || "No proporcionado"}\n`;
@@ -60,7 +60,7 @@ export default function RSVPSection() {
     }
 
     if (data.message) {
-      message += `💌 *Mensaje para Isabella:* ${data.message}\n`;
+      message += `💌 *Mensaje para Zahira:* ${data.message}\n`;
     }
 
     message += `\n📅 *Fecha:* ${new Date().toLocaleDateString("es-ES", {
@@ -311,7 +311,7 @@ export default function RSVPSection() {
             <div>
               <label className=" text-gray-700 font-medium mb-2 flex items-center gap-2">
                 <Heart className="w-5 h-5 text-quince-500" />
-                Mensaje Especial para Isabella
+                Mensaje Especial para Zahira
               </label>
               <textarea
                 name="message"
@@ -320,7 +320,7 @@ export default function RSVPSection() {
                 rows={4}
                 disabled={loading}
                 className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-quince-500 focus:border-transparent transition-all resize-none disabled:opacity-50"
-                placeholder="Comparte tus mejores deseos para Isabella en su día especial..."
+                placeholder="Comparte tus mejores deseos para Zahira en su día especial..."
               />
             </div>
 

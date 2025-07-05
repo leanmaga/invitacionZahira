@@ -12,8 +12,8 @@ const dancing = Dancing_Script({
 });
 
 export const metadata = {
-  title: "Isabella - Quinceañera Invitation",
-  description: "Una celebración mágica - 15 años de Isabella",
+  title: "Zahira - Quinceañera Invitation",
+  description: "Una celebración mágica - 15 años de Zahira",
 };
 
 export default function RootLayout({ children }) {

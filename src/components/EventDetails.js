@@ -7,20 +7,20 @@ const details = [
   {
     icon: Calendar,
     title: "Fecha",
-    value: "Sábado, 15 de Abril 2024",
+    value: "Sábado, 06 de Diciembre 2025",
     description: "Una fecha especial para una ocasión especial",
   },
   {
     icon: Clock,
     title: "Hora",
-    value: "7:00 PM - 2:00 AM",
+    value: "10:00 AM - 19:00 PM",
     description: "Una noche llena de celebración y alegría",
   },
   {
     icon: MapPin,
     title: "Lugar",
-    value: "Salón de Eventos Crystal",
-    description: "Av. Principal 123, Ciudad Mágica",
+    value: "Merlo Norte",
+    description: "Diaz Vélez 89",
   },
   {
     icon: Users,

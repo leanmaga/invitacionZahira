@@ -16,7 +16,7 @@ const dressCodeOptions = [
     ],
     icon: Shirt,
     color: "from-gray-600 to-gray-800",
-    image: "/assets/manTraje.jpg", // Ruta desde public/
+    image: "/assets/manTraje.jpg",
   },
   {
     title: "Damas",
@@ -29,7 +29,7 @@ const dressCodeOptions = [
     ],
     icon: Crown,
     color: "from-quince-400 to-quince-600",
-    image: "/assets/vestidoMujer.jpg", // Ruta desde public/
+    image: "/assets/vestidoMujer.jpg",
   },
 ];
 
@@ -128,7 +128,7 @@ export default function DressCode() {
           className="mt-16 p-8 glass rounded-3xl text-center max-w-3xl mx-auto"
         >
           <h3 className="font-elegant text-3xl font-bold text-quince-600 mb-4">
-            ¡Tu elegancia hará que la noche sea aún más especial!
+            ¡Traer ropa extra para disfrutar de la pileta!
           </h3>
           <p className="text-gray-700 text-lg mb-6">
             Recuerda que lo más importante es que te sientas cómodo(a) y

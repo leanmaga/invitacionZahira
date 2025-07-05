@@ -34,8 +34,8 @@ export default function Footer() {
   ];
 
   const socialLinks = [
-    { icon: Instagram, href: "#", label: "@isabella_quince" },
-    { icon: Facebook, href: "#", label: "Isabella Quinceañera" },
+    { icon: Instagram, href: "#", label: "@Zahira_quince" },
+    { icon: Facebook, href: "#", label: "Zahira Quinceañera" },
     { icon: WhatsApp, href: "#", label: "+52 (555) 123-4567" },
   ];
 
@@ -51,7 +51,7 @@ export default function Footer() {
         >
           <Crown className="w-12 h-12 mx-auto text-gold-400 mb-4" />
           <h2 className="font-elegant text-4xl md:text-5xl font-bold text-white mb-4">
-            Isabella
+            Zahira
           </h2>
           <p className="text-xl text-gray-300 max-w-2xl mx-auto">
             Gracias por ser parte de este momento tan especial en mi vida. Tu
@@ -74,7 +74,7 @@ export default function Footer() {
             <div className="space-y-2 text-gray-300">
               <p>Familia García López</p>
               <p>+52 (555) 123-4567</p>
-              <p>isabella.quince@email.com</p>
+              <p>Zahira.quince@email.com</p>
             </div>
           </motion.div>
 
@@ -90,10 +90,10 @@ export default function Footer() {
               Detalles del Evento
             </h3>
             <div className="space-y-2 text-gray-300">
-              <p>15 de Abril, 2024</p>
-              <p>7:00 PM - 2:00 AM</p>
-              <p>Salón Crystal</p>
-              <p>Av. Principal 123</p>
+              <p>06 de Diciembre, 2025</p>
+              <p>10:00 AM - 19:00 PM</p>
+
+              <p>Diaz Vélez 89</p>
             </div>
           </motion.div>
 
@@ -122,7 +122,7 @@ export default function Footer() {
                 </motion.a>
               ))}
             </div>
-            <p className="mt-4 text-gray-300 text-sm">#Isabella15Años</p>
+            <p className="mt-4 text-gray-300 text-sm">#Zahira15Años</p>
           </motion.div>
         </div>
 
@@ -148,7 +148,7 @@ export default function Footer() {
           <div className="flex items-center justify-center gap-2 text-sm text-gray-500">
             <span>Hecho con</span>
             <Heart className="w-4 h-4 text-quince-400" />
-            <span>para Isabella • 2024</span>
+            <span>para Zahira</span>
           </div>
         </motion.div>
       </div>

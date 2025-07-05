@@ -33,10 +33,6 @@ export default function LocationSection() {
             className="space-y-8"
           >
             <div className="glass rounded-3xl p-8">
-              <h3 className="font-serif text-3xl font-bold text-gray-800 mb-6">
-                Salón de Eventos Crystal
-              </h3>
-
               <div className="space-y-6">
                 <motion.div
                   whileHover={{ scale: 1.02 }}
@@ -48,9 +44,9 @@ export default function LocationSection() {
                       Dirección
                     </h4>
                     <p className="text-gray-600">
-                      Av. Principal 123, Colonia Elegante
+                      Díaz Vélez 89, entre Av. Rivadavia y Bacacay
                       <br />
-                      Ciudad Mágica, CP 12345
+                      Merlo Norte, Buenos Aires, Argentina
                     </p>
                   </div>
                 </motion.div>
@@ -82,9 +78,9 @@ export default function LocationSection() {
                       Horario
                     </h4>
                     <p className="text-gray-600">
-                      Recepción: 7:00 PM
+                      Recepción: 10:00 AM
                       <br />
-                      Evento hasta: 2:00 AM
+                      Evento hasta: 19:00 PM
                     </p>
                   </div>
                 </motion.div>
@@ -96,7 +92,10 @@ export default function LocationSection() {
                   whileTap={{ scale: 0.95 }}
                   className="flex-1 bg-gradient-to-r from-quince-500 to-quince-600 text-white px-6 py-3 rounded-full font-semibold hover:shadow-lg transition-all duration-300"
                   onClick={() =>
-                    window.open("https://maps.google.com", "_blank")
+                    window.open(
+                      "https://maps.app.goo.gl/dENNwyQN7WCbH3wT9",
+                      "_blank"
+                    )
                   }
                 >
                   <Navigation className="w-5 h-5 inline mr-2" />
@@ -107,29 +106,17 @@ export default function LocationSection() {
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   className="flex-1 border-2 border-quince-500 text-quince-600 px-6 py-3 rounded-full font-semibold hover:bg-quince-50 transition-all duration-300"
-                  onClick={() => window.open("https://waze.com", "_blank")}
+                  onClick={() =>
+                    window.open(
+                      "https://www.waze.com/en/live-map/directions/ar/provincia-de-buenos-aires/merlo/diaz-velez-89?place=EkJEw61heiBWw6lsZXogODksIEIxNzIyIE1lcmxvLCBQcm92aW5jaWEgZGUgQnVlbm9zIEFpcmVzLCBBcmdlbnRpbmEiMBIuChQKEgkLqCfRZ5W8lRE0sM64yb-wBBBZKhQKEgkjaU4tZpW8lRFiiu3h5O_1DQ",
+                      "_blank"
+                    )
+                  }
                 >
                   Abrir en Waze
                 </motion.button>
               </div>
             </div>
-
-            {/* Parking Info */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.3 }}
-              viewport={{ once: true }}
-              className="p-6 bg-gradient-to-r from-gold-100 to-gold-200 rounded-2xl"
-            >
-              <h4 className="font-semibold text-gray-800 mb-2">
-                Información de Estacionamiento
-              </h4>
-              <p className="text-gray-700">
-                Estacionamiento gratuito disponible para todos los invitados.
-                Servicio de valet parking incluido para mayor comodidad.
-              </p>
-            </motion.div>
           </motion.div>
 
           {/* Map Placeholder */}
@@ -146,7 +133,7 @@ export default function LocationSection() {
                 <div className="text-center">
                   <MapPin className="w-16 h-16 text-quince-500 mx-auto mb-4" />
                   <h3 className="font-serif text-2xl font-bold text-gray-800 mb-2">
-                    Salón Crystal
+                    Diaz Vélez 89, Merlo Norte
                   </h3>
                   <p className="text-gray-600">
                     Haz clic para ver el mapa interactivo
@@ -179,7 +166,12 @@ export default function LocationSection() {
               <motion.div
                 whileHover={{ opacity: 1 }}
                 className="absolute inset-0 bg-black/20 opacity-0 transition-opacity cursor-pointer flex items-center justify-center"
-                onClick={() => window.open("https://maps.google.com", "_blank")}
+                onClick={() =>
+                  window.open(
+                    "https://maps.app.goo.gl/dENNwyQN7WCbH3wT9",
+                    "_blank"
+                  )
+                }
               >
                 <div className="bg-white/90 backdrop-blur-sm rounded-full px-6 py-3">
                   <span className="font-semibold text-gray-800">

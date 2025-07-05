@@ -64,7 +64,7 @@ export default function Navigation() {
               whileHover={{ scale: 1.05 }}
               className="font-elegant text-xl sm:text-2xl md:text-3xl font-bold text-quince-600 flex-shrink-0"
             >
-              Isabella
+              Zahira
             </motion.div>
 
             {/* Desktop Navigation */}
