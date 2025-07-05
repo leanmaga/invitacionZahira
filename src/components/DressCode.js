@@ -57,7 +57,7 @@ export default function DressCode() {
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto">
+        <div className="grid gap-12 max-w-5xl mx-auto">
           {dressCodeOptions.map((option, index) => (
             <motion.div
               key={option.title}
@@ -66,33 +66,32 @@ export default function DressCode() {
               transition={{ duration: 0.8, delay: index * 0.2 }}
               viewport={{ once: true }}
               whileHover={{ scale: 1.02, y: -5 }}
-              className="glass rounded-3xl overflow-hidden shadow-xl"
+              className="flex rounded-3xl overflow-hidden shadow-xl bg-white glass"
             >
-              {/* Image Section */}
-              <div className="relative h-64 overflow-hidden">
+              {/* Imagen al costado izquierdo */}
+              <div className="w-1/4 relative h-auto min-h-[300px]">
                 <Image
-                  width={400}
-                  height={300}
                   src={option.image}
                   alt={option.title}
-                  className="w-full h-full object-contain"
+                  fill
+                  className="object-cover"
                 />
                 <div
                   className={`absolute inset-0 bg-gradient-to-t ${option.color} opacity-70`}
-                ></div>
+                />
                 <div className="absolute inset-0 flex items-center justify-center">
                   <motion.div
                     whileHover={{ rotate: 360 }}
                     transition={{ duration: 0.6 }}
                     className="bg-white/20 backdrop-blur-md rounded-full p-4"
                   >
-                    <option.icon className="w-12 h-12 text-white" />
+                    <option.icon className="w-10 h-10 text-white" />
                   </motion.div>
                 </div>
               </div>
 
-              {/* Content Section */}
-              <div className="p-8">
+              {/* Contenido a la derecha */}
+              <div className="w-3/4 p-8">
                 <h3 className="font-serif text-2xl font-bold text-gray-800 mb-2">
                   {option.title}
                 </h3>
@@ -120,6 +119,7 @@ export default function DressCode() {
           ))}
         </div>
 
+        {/* Extra Card Final */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}

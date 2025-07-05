@@ -72,9 +72,7 @@ export default function Footer() {
               Información de Contacto
             </h3>
             <div className="space-y-2 text-gray-300">
-              <p>Familia García López</p>
-              <p>+52 (555) 123-4567</p>
-              <p>Zahira.quince@email.com</p>
+              <p>+54 9 11 3044-1529</p>
             </div>
           </motion.div>
 
@@ -95,34 +93,6 @@ export default function Footer() {
 
               <p>Diaz Vélez 89</p>
             </div>
-          </motion.div>
-
-          {/* Social Media */}
-          <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            viewport={{ once: true }}
-            className="text-center md:text-right"
-          >
-            <h3 className="font-serif text-xl font-bold mb-4 text-quince-300">
-              Síguenos
-            </h3>
-            <div className="flex justify-center md:justify-end gap-4">
-              {socialLinks.map((social, index) => (
-                <motion.a
-                  key={index}
-                  href={social.href}
-                  whileHover={{ scale: 1.2, rotate: 360 }}
-                  transition={{ duration: 0.3 }}
-                  className="w-10 h-10 bg-quince-500 hover:bg-quince-400 rounded-full flex items-center justify-center transition-colors"
-                  title={social.label}
-                >
-                  <social.icon className="w-5 h-5" />
-                </motion.a>
-              ))}
-            </div>
-            <p className="mt-4 text-gray-300 text-sm">#Zahira15Años</p>
           </motion.div>
         </div>
 

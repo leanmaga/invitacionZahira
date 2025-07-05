@@ -76,7 +76,7 @@ export default function Navigation() {
                   initial={{ opacity: 0, y: -20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: index * 0.1 }}
-                  whileHover={{ scale: 1.05, color: "#ec4899" }}
+                  whileHover={{ scale: 1.05, color: "var(--color-quince-500)" }}
                   className="text-gray-700 hover:text-quince-500 font-medium transition-colors text-sm lg:text-base whitespace-nowrap"
                 >
                   {item.name}

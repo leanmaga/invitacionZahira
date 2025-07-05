@@ -5,16 +5,38 @@ import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import HeroSection from "@/components/HeroSection";
 import CountdownSection from "@/components/CountdownSection";
-import PhotoGallery from "@/components/PhotoGallery";
 import EventDetails from "@/components/EventDetails";
 import DressCode from "@/components/DressCode";
 import MusicRequests from "@/components/MusicRequests";
 import LocationSection from "@/components/LocationSection";
-import HashtagSection from "@/components/HashtagSection";
 import RSVPSection from "@/components/RSVPSection";
-import Timeline from "@/components/Timeline";
 import Footer from "@/components/Footer";
 import Navigation from "@/components/Navigation";
+import { Sparkles } from "lucide-react"; // Asegúrate de tener esto importado
+
+// Dentro del componente SplashScreen, justo antes del return
+const sparklePositions = [
+  { left: "10%", top: "20%" },
+  { left: "80%", top: "15%" },
+  { left: "15%", top: "70%" },
+  { left: "75%", top: "60%" },
+  { left: "45%", top: "25%" },
+  { left: "90%", top: "40%" },
+  { left: "25%", top: "80%" },
+  { left: "60%", top: "10%" },
+  { left: "5%", top: "50%" },
+  { left: "85%", top: "75%" },
+  { left: "30%", top: "35%" },
+  { left: "70%", top: "85%" },
+  { left: "95%", top: "65%" },
+  { left: "20%", top: "45%" },
+  { left: "55%", top: "90%" },
+  { left: "40%", top: "5%" },
+  { left: "65%", top: "55%" },
+  { left: "35%", top: "75%" },
+  { left: "8%", top: "30%" },
+  { left: "88%", top: "25%" },
+];
 
 function SplashScreen({ onEnter }) {
   const [isTransitioning, setIsTransitioning] = useState(false);
@@ -38,6 +60,34 @@ function SplashScreen({ onEnter }) {
     <div className="fixed inset-0 w-full h-full z-50 overflow-hidden">
       {/* Imagen de fondo */}
       <div className="absolute inset-0 z-1">
+        {/* Sparkles animados como en HeroSection */}
+        <div className="absolute inset-0 overflow-hidden z-5 pointer-events-none">
+          {sparklePositions.map((position, i) => (
+            <motion.div
+              key={i}
+              className="absolute"
+              initial={{ opacity: 0, scale: 0 }}
+              animate={{
+                opacity: [0, 1, 0],
+                scale: [0, 1, 0],
+                rotate: [0, 180, 360],
+              }}
+              transition={{
+                duration: 3,
+                repeat: Infinity,
+                delay: i * 0.2,
+                ease: "easeInOut",
+              }}
+              style={{
+                left: position.left,
+                top: position.top,
+              }}
+            >
+              <Sparkles className="text-quince-400 w-4 h-4" />
+            </motion.div>
+          ))}
+        </div>
+
         <Image
           src="/assets/herobg.jpg"
           alt="Background"
@@ -52,18 +102,25 @@ function SplashScreen({ onEnter }) {
 
       {/* Botón centrado */}
       <div className="absolute inset-0 z-20 flex items-center justify-center top-100">
-        <motion.button
-          whileHover={{
-            scale: 1.1,
-            boxShadow: "0 0 50px rgba(255,255,255,0.8)",
-          }}
-          whileTap={{ scale: 0.95 }}
-          onClick={handleClick}
-          disabled={isTransitioning}
-          className="bg-gradient-to-r from-white to-gray-100 text-gray-800 px-6 py-3 rounded-full font-bold text-2xl shadow-2xl border-4 border-white/50 backdrop-blur-sm transition-all duration-300 hover:from-gray-100 hover:to-white"
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.9 }}
+          className="mt-12"
         >
-          ✨ Descubre la Magia ✨
-        </motion.button>
+          <motion.button
+            whileHover={{
+              scale: 1.1,
+              boxShadow: "0 0 50px rgba(255,255,255,0.8)",
+            }}
+            whileTap={{ scale: 0.95 }}
+            onClick={handleClick}
+            disabled={isTransitioning}
+            className="font-serif bg-gradient-to-r from-quince-500 to-quince-600 text-white px-8 py-4 rounded-full font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300 sparkle"
+          >
+            Descubre la Magia
+          </motion.button>
+        </motion.div>
       </div>
 
       {/* Efecto de humo blanco */}
@@ -72,8 +129,9 @@ function SplashScreen({ onEnter }) {
           {smokeElements.map((smoke) => (
             <motion.div
               key={smoke.id}
-              className="absolute bg-white rounded-full opacity-90 blur-xl"
+              className="absolute bg-quince-600 rounded-full opacity-90 blur-xl"
               style={{
+                backgroundColor: "rgba(148, 0, 211, 0.7)",
                 left: `${smoke.left}%`,
                 width: `${smoke.size}px`,
                 height: `${smoke.size}px`,
@@ -151,12 +209,9 @@ export default function Home() {
               <HeroSection />
               <CountdownSection />
               <EventDetails />
-              <Timeline />
-              <PhotoGallery />
               <DressCode />
               <LocationSection />
               <MusicRequests />
-              <HashtagSection />
               <RSVPSection />
               <Footer />
             </main>

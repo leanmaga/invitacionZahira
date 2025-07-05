@@ -2,13 +2,13 @@
 
 @theme {
   /* Configuración de colores personalizados */
-  --color-quince-50: #fdf2f8;
-  --color-quince-100: #fce7f3;
-  --color-quince-200: #fbcfe8;
-  --color-quince-300: #f9a8d4;
-  --color-quince-400: #f472b6;
-  --color-quince-500: #ec4899;
-  --color-quince-600: #db2777;
+  --color-quince-50: #f5effa; /* violeta muy pálido, casi blanco */
+  --color-quince-100: #e5d4f3; /* violeta claro, lavanda */
+  --color-quince-200: #d0aeee; /* violeta pastel */
+  --color-quince-300: #b67ada;
+  --color-quince-400: #9b4ec3;
+  --color-quince-500: #6a3391;
+  --color-quince-600: #8233b2;
 
   --color-gold-50: #fffbeb;
   --color-gold-100: #fef3c7;
@@ -18,25 +18,25 @@
   --color-gold-500: #f59e0b;
 
   /* Variables del sistema de diseño */
-  --color-background: #ffffff;
-  --color-foreground: #0a0a0a;
+  --color-background: #f5effa;
+  --color-foreground: #1f1f1f;
   --color-card: #ffffff;
-  --color-card-foreground: #0a0a0a;
+  --color-card-foreground: #1f1f1f;
   --color-popover: #ffffff;
-  --color-popover-foreground: #0a0a0a;
-  --color-primary: #171717;
-  --color-primary-foreground: #fafafa;
-  --color-secondary: #f5f5f5;
-  --color-secondary-foreground: #171717;
-  --color-muted: #f5f5f5;
-  --color-muted-foreground: #737373;
-  --color-accent: #f5f5f5;
-  --color-accent-foreground: #171717;
-  --color-destructive: #ef4444;
-  --color-destructive-foreground: #fafafa;
-  --color-border: #e5e5e5;
-  --color-input: #e5e5e5;
-  --color-ring: #171717;
+  --color-popover-foreground: #1f1f1f;
+  --color-primary: #9b4ec3;
+  --color-primary-foreground: #ffffff;
+  --color-secondary: #fef3c7;
+  --color-secondary-foreground: #6a3391;
+  --color-muted: #f5effa;
+  --color-muted-foreground: #6a3391;
+  --color-accent: #fcd34d;
+  --color-accent-foreground: #6a3391;
+  --color-destructive: #e11d48;
+  --color-destructive-foreground: #ffffff;
+  --color-border: #e0c8f0;
+  --color-input: #e5d4f3;
+  --color-ring: #9b4ec3;
 
   /* Border radius */
   --radius-lg: 0.5rem;
@@ -51,15 +51,15 @@
 
 @media (prefers-color-scheme: dark) {
   @theme {
-    --color-background: #0a0a0a;
+    --color-background: #1a1028;
     --color-foreground: #fafafa;
-    --color-card: #0a0a0a;
+    --color-card: #231536;
     --color-card-foreground: #fafafa;
     --color-popover: #0a0a0a;
     --color-popover-foreground: #fafafa;
-    --color-primary: #fafafa;
+    --color-primary: #d0aeee;
     --color-primary-foreground: #171717;
-    --color-secondary: #262626;
+    --color-secondary: #fbbf24;
     --color-secondary-foreground: #fafafa;
     --color-muted: #262626;
     --color-muted-foreground: #a3a3a3;
@@ -67,9 +67,9 @@
     --color-accent-foreground: #fafafa;
     --color-destructive: #7f1d1d;
     --color-destructive-foreground: #fafafa;
-    --color-border: #262626;
+    --color-border: #3b224f;
     --color-input: #262626;
-    --color-ring: #d4d4d8;
+    --color-ring: #b67ada;
   }
 }
 
