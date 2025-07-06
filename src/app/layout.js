@@ -1,13 +1,15 @@
 import "./globals.css";
-import { Inter, Playfair_Display, Dancing_Script } from "next/font/google";
+import { Inter, Playfair_Display, Beau_Rivage } from "next/font/google";
 
 const inter = Inter({ subsets: ["latin"] });
 const playfair = Playfair_Display({
   subsets: ["latin"],
   variable: "--font-serif",
 });
-const dancing = Dancing_Script({
+
+const imperial = Beau_Rivage({
   subsets: ["latin"],
+  weight: "400",
   variable: "--font-elegant",
 });
 
@@ -18,7 +20,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="es" className={`${playfair.variable} ${dancing.variable}`}>
+    <html lang="es" className={`${playfair.variable} ${imperial.variable}`}>
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link

@@ -43,10 +43,10 @@
   --radius-md: calc(0.5rem - 2px);
   --radius-sm: calc(0.5rem - 4px);
 
-  /* Fuentes */
-  --font-family-elegant: ui-serif, Georgia, Cambria, "Times New Roman", Times,
-    serif;
   --font-family-sans: ui-sans-serif, system-ui, sans-serif;
+}
+.font-elegant {
+  font-family: var(--font-elegant);
 }
 
 @media (prefers-color-scheme: dark) {
