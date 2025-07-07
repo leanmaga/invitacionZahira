@@ -38,7 +38,7 @@ export default function SplashScreen({ onEnter }) {
 
   return (
     <motion.div
-      className="fixed inset-0 z-50 overflow-hidden bg-violet-100"
+      className="fixed inset-0 z-50 overflow-hidden bg-rose-50"
       initial={{ opacity: 1 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0, transition: { duration: 0.6 } }}
@@ -49,7 +49,7 @@ export default function SplashScreen({ onEnter }) {
           src="/assets/herobg.jpg"
           alt="Fondo mágico"
           fill
-          className="object-contain"
+          className="object-cover sm:object-contain" // Cover en móvil (hasta sm), contain en tablet+
           priority
         />
         <div className="absolute inset-0 overflow-hidden pointer-events-none z-20">
@@ -87,7 +87,7 @@ export default function SplashScreen({ onEnter }) {
           whileTap={{ scale: 0.95 }}
           onClick={handleClick}
           disabled={clicked}
-          className="font-serif bg-gradient-to-r from-quince-500 to-quince-600
+          className="font-serif bg-gradient-to-r from-quince-500 to-quince-600 mt-100
                      text-white px-8 py-4 rounded-full font-semibold text-lg shadow-md"
         >
           Descubre la Magia
