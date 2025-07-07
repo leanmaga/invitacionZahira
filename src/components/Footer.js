@@ -2,14 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import {
-  Heart,
-  Crown,
-  Sparkles,
-  Instagram,
-  Facebook,
-  Apple as WhatsApp,
-} from "lucide-react";
+import { Heart, Crown, Sparkles } from "lucide-react";
 
 export default function Footer() {
   const [mounted, setMounted] = useState(false);
@@ -40,12 +33,6 @@ export default function Footer() {
     "95%",
   ];
 
-  const socialLinks = [
-    { icon: Instagram, href: "#", label: "@Zahira_quince" },
-    { icon: Facebook, href: "#", label: "Zahira Quinceañera" },
-    { icon: WhatsApp, href: "#", label: "+52 (555) 123-4567" },
-  ];
-
   return (
     <footer className="bg-gradient-to-br from-gray-900 to-gray-800 text-white py-16 relative overflow-hidden">
       <div className="max-w-6xl mx-auto px-4 relative z-10">
@@ -62,18 +49,18 @@ export default function Footer() {
           </h2>
           <p className="text-xl text-gray-300 max-w-2xl mx-auto">
             Gracias por ser parte de este momento tan especial en mi vida. Tu
-            presencia hará que esta noche sea verdaderamente mágica.
+            presencia hará que esta día sea verdaderamente mágico.
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-3 gap-12 mb-12">
+        <div className="flex flex-col md:flex-row justify-center items-center gap-12 md:gap-24 mb-12">
           {/* Contact Info */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="text-center md:text-left"
+            className="text-center"
           >
             <h3 className="font-serif text-xl font-bold mb-4 text-quince-300">
               Información de Contacto
@@ -97,7 +84,6 @@ export default function Footer() {
             <div className="space-y-2 text-gray-300">
               <p>06 de Diciembre, 2025</p>
               <p>10:00 AM - 19:00 PM</p>
-
               <p>Diaz Vélez 89</p>
             </div>
           </motion.div>

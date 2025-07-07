@@ -157,8 +157,8 @@ export default function MusicRequests() {
             Pide tu Canción Favorita
           </h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Ayúdanos a crear la playlist perfecta para esta noche mágica. ¡Tu
-            música favorita puede ser la que haga bailar a todos!
+            Ayúdanos a crear la playlist perfecta. ¡Tu música favorita puede ser
+            la que haga bailar a todos!
           </p>
         </motion.div>
 
@@ -291,7 +291,7 @@ export default function MusicRequests() {
                 <div
                   className="space-y-3 overflow-y-auto message-scrollbar pr-2"
                   style={{
-                    height: "240px", // Altura fija para aproximadamente 3 canciones
+                    height: "240px",
                   }}
                 >
                   <AnimatePresence>
@@ -371,65 +371,6 @@ export default function MusicRequests() {
                   </p>
                 </div>
               )}
-            </motion.div>
-
-            {/* Popular Songs */}
-            <motion.div
-              initial={{ opacity: 0, x: 50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              viewport={{ once: true }}
-              className="glass rounded-3xl p-8"
-            >
-              <h3 className="font-serif text-2xl font-bold text-gray-800 mb-6">
-                Canciones Populares
-              </h3>
-              <p className="text-gray-600 mb-6">
-                {submitted
-                  ? "Ya enviaste tu canción. Para elegir otra, recarga la página:"
-                  : "Estas son algunas de las canciones más solicitadas para quinceañeras. Click para seleccionar:"}
-              </p>
-
-              <div className="space-y-4">
-                {popularSongs.map((song, index) => (
-                  <motion.div
-                    key={index}
-                    initial={{ opacity: 0, x: 20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.5, delay: index * 0.1 }}
-                    viewport={{ once: true }}
-                    whileHover={{
-                      scale: submitted ? 1 : 1.02,
-                      x: submitted ? 0 : 5,
-                    }}
-                    className={`flex items-center gap-3 p-3 rounded-xl transition-all ${
-                      submitted
-                        ? "bg-gray-100 cursor-not-allowed opacity-60"
-                        : "bg-white/50 hover:bg-white/80 cursor-pointer"
-                    }`}
-                    onClick={() => {
-                      if (submitted) {
-                        alert(
-                          "Ya enviaste tu canción. Para agregar otra, recarga la página."
-                        );
-                        return;
-                      }
-                      const [songName, artist] = song.split(" - ");
-                      setSongRequest(songName);
-                      setArtistRequest(artist || "");
-                    }}
-                  >
-                    <Music className="w-5 h-5 text-quince-400 flex-shrink-0" />
-                    <span
-                      className={`font-medium ${
-                        submitted ? "text-gray-500" : "text-gray-700"
-                      }`}
-                    >
-                      {song}
-                    </span>
-                  </motion.div>
-                ))}
-              </div>
             </motion.div>
           </div>
         </div>

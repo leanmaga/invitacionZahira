@@ -8,25 +8,16 @@ const details = [
     icon: Calendar,
     title: "Fecha",
     value: "Sábado, 06 de Diciembre 2025",
-    description: "Una fecha especial para una ocasión especial",
   },
   {
     icon: Clock,
     title: "Hora",
     value: "10:00 AM - 19:00 PM",
-    description: "Una noche llena de celebración y alegría",
   },
   {
     icon: MapPin,
     title: "Lugar",
-    value: "Merlo Norte",
-    description: "Diaz Vélez 89",
-  },
-  {
-    icon: Users,
-    title: "Capacidad",
-    value: "150 Invitados",
-    description: "Espacio elegante para todos nuestros seres queridos",
+    value: "Diaz Vélez 89",
   },
 ];
 
@@ -49,7 +40,7 @@ export default function EventDetails() {
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {details.map((detail, index) => (
             <motion.div
               key={detail.title}
@@ -92,7 +83,7 @@ export default function EventDetails() {
             ¡Tu presencia es el mejor regalo!
           </h3>
           <p className="text-gray-700 text-lg">
-            Acompáñanos en esta noche mágica llena de música, baile y momentos
+            Acompáñanos en este día mágico lleno de música, baile y momentos
             inolvidables
           </p>
         </motion.div>

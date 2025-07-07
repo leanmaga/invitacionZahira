@@ -4,35 +4,6 @@ import { motion } from "framer-motion";
 import { Shirt, Sparkles, Crown, Heart } from "lucide-react";
 import Image from "next/image";
 
-const dressCodeOptions = [
-  {
-    title: "Caballeros",
-    description: "Elegancia Formal",
-    items: [
-      "Traje oscuro (negro, azul marino o gris)",
-      "Camisa blanca o de color claro",
-      "Corbata o moño",
-      "Zapatos de vestir",
-    ],
-    icon: Shirt,
-    color: "from-gray-600 to-gray-800",
-    image: "/assets/manTraje.jpg",
-  },
-  {
-    title: "Damas",
-    description: "Glamour y Sofisticación",
-    items: [
-      "Vestido elegante largo o midi",
-      "Colores: dorado, rosa, azul o blanco",
-      "Evitar el negro (reservado para la quinceañera)",
-      "Zapatos cómodos para bailar",
-    ],
-    icon: Crown,
-    color: "from-quince-400 to-quince-600",
-    image: "/assets/vestidoMujer.jpg",
-  },
-];
-
 export default function DressCode() {
   return (
     <section
@@ -52,71 +23,85 @@ export default function DressCode() {
             Código de Vestimenta
           </h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Vístete para brillar en esta noche mágica. Tu elegancia
-            complementará la belleza de la celebración.
+            Vístete para brillar en esta día mágico. Tu elegancia complementará
+            la belleza de la celebración.
           </p>
         </motion.div>
 
-        <div className="grid gap-12 max-w-5xl mx-auto">
-          {dressCodeOptions.map((option, index) => (
-            <motion.div
-              key={option.title}
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: index * 0.2 }}
-              viewport={{ once: true }}
-              whileHover={{ scale: 1.02, y: -5 }}
-              className="flex rounded-3xl overflow-hidden shadow-xl bg-white glass"
-            >
-              {/* Imagen al costado izquierdo */}
-              <div className="w-1/4 relative h-auto min-h-[300px]">
-                <Image
-                  src={option.image}
-                  alt={option.title}
-                  fill
-                  className="object-cover"
-                />
-                <div
-                  className={`absolute inset-0 bg-gradient-to-t ${option.color} opacity-70`}
-                />
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <motion.div
-                    whileHover={{ rotate: 360 }}
-                    transition={{ duration: 0.6 }}
-                    className="bg-white/20 backdrop-blur-md rounded-full p-4"
-                  >
-                    <option.icon className="w-10 h-10 text-white" />
-                  </motion.div>
-                </div>
+        <div className="grid gap-12 max-w-6xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            whileHover={{ scale: 1.02, y: -5 }}
+            className="flex rounded-3xl overflow-hidden shadow-xl bg-white glass"
+          >
+            {/* Imagen del hombre al costado izquierdo */}
+            <div className="w-1/4 relative h-auto min-h-[350px]">
+              <Image
+                src="/assets/manTraje.jpg"
+                alt="Caballeros"
+                fill
+                className="object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-gray-600 to-gray-800 opacity-70" />
+              <div className="absolute inset-0 flex items-center justify-center">
+                <motion.div
+                  whileHover={{ rotate: 360 }}
+                  transition={{ duration: 0.6 }}
+                  className="bg-white/20 backdrop-blur-md rounded-full p-4"
+                >
+                  <Shirt className="w-10 h-10 text-white" />
+                </motion.div>
               </div>
+            </div>
 
-              {/* Contenido a la derecha */}
-              <div className="w-3/4 p-8">
-                <h3 className="font-serif text-2xl font-bold text-gray-800 mb-2">
-                  {option.title}
+            {/* Contenido central */}
+            <div className="w-2/4 p-8 flex flex-col justify-center">
+              <div className="text-center">
+                <h3 className="font-serif text-3xl font-bold text-gray-800 mb-2">
+                  Elegante Sport
                 </h3>
-                <p className="text-gray-600 mb-6 font-medium">
-                  {option.description}
+                <p className="text-gray-600 mb-6 font-medium text-lg">
+                  Dress Code para toda la celebración
                 </p>
 
-                <ul className="space-y-3">
-                  {option.items.map((item, itemIndex) => (
-                    <motion.li
-                      key={itemIndex}
-                      initial={{ opacity: 0, x: -20 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      transition={{ duration: 0.5, delay: itemIndex * 0.1 }}
-                      viewport={{ once: true }}
-                      className="flex items-start gap-3"
-                    >
-                      <Heart className="w-5 h-5 text-quince-400 flex-shrink-0 mt-0.5" />
-                      <span className="text-gray-700">{item}</span>
-                    </motion.li>
-                  ))}
-                </ul>
+                <motion.div
+                  initial={{ opacity: 0, x: 0 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.5 }}
+                  viewport={{ once: true }}
+                  className="flex items-center justify-center gap-3 bg-gradient-to-r from-quince-50 to-gold-50 p-4 rounded-xl"
+                >
+                  <Heart className="w-5 h-5 text-quince-400 flex-shrink-0" />
+                  <span className="text-gray-700 font-medium">
+                    Evitar colores lila y negro
+                  </span>
+                </motion.div>
               </div>
-            </motion.div>
-          ))}
+            </div>
+
+            {/* Imagen de la mujer al costado derecho */}
+            <div className="w-1/4 relative h-auto min-h-[350px]">
+              <Image
+                src="/assets/vestidoMujer.jpg"
+                alt="Damas"
+                fill
+                className="object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-quince-400 to-quince-600 opacity-70" />
+              <div className="absolute inset-0 flex items-center justify-center">
+                <motion.div
+                  whileHover={{ rotate: 360 }}
+                  transition={{ duration: 0.6 }}
+                  className="bg-white/20 backdrop-blur-md rounded-full p-4"
+                >
+                  <Crown className="w-10 h-10 text-white" />
+                </motion.div>
+              </div>
+            </div>
+          </motion.div>
         </div>
 
         {/* Extra Card Final */}

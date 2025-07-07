@@ -111,26 +111,6 @@ export default function HeroSection() {
           </div>
           <div className="text-lg text-gray-700 mb-4">10:00 AM a 19:00 PM</div>
         </motion.div>
-
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.9 }}
-          className="mt-12"
-        >
-          <motion.button
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="bg-gradient-to-r from-quince-500 to-quince-600 text-white px-8 py-4 rounded-full font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300 sparkle"
-            onClick={() =>
-              document
-                .getElementById("details")
-                ?.scrollIntoView({ behavior: "smooth" })
-            }
-          >
-            Descubre la Magia
-          </motion.button>
-        </motion.div>
       </div>
 
       {/* Scroll indicator */}

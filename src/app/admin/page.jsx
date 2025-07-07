@@ -7,5 +7,5 @@ export default function AdminPage() {
 export const metadata = {
   title: "Panel de Administración - Zahira",
   description: "Dashboard para gestionar confirmaciones de asistencia",
-  robots: "noindex, nofollow", // Evita que Google indexe esta página
+  robots: "noindex, nofollow",
 };

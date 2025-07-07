@@ -6,8 +6,6 @@ import {
   Send,
   User,
   Phone,
-  Mail,
-  Users,
   Utensils,
   Heart,
   Loader2,
@@ -18,9 +16,7 @@ import { supabase } from "../lib/supabase";
 export default function RSVPSection() {
   const [formData, setFormData] = useState({
     name: "",
-    email: "",
     phone: "",
-    guests: "1",
     dietary: "",
     message: "",
   });
@@ -46,14 +42,9 @@ export default function RSVPSection() {
   };
 
   const formatWhatsAppMessage = (data) => {
-    const guestText =
-      data.guests === "1" ? "Solo yo" : `${data.guests} personas`;
-
     let message = `🎉 *CONFIRMACIÓN DE ASISTENCIA - QUINCEAÑERA Zahira*\n\n`;
     message += `👤 *Nombre:* ${data.name}\n`;
-    message += `📧 *Email:* ${data.email}\n`;
     message += `📱 *Teléfono:* ${data.phone || "No proporcionado"}\n`;
-    message += `👥 *Invitados:* ${guestText}\n`;
 
     if (data.dietary) {
       message += `🍽️ *Restricciones alimentarias:* ${data.dietary}\n`;
@@ -84,9 +75,7 @@ export default function RSVPSection() {
     const { error } = await supabase.from("rsvp_confirmations").insert([
       {
         name: data.name,
-        email: data.email,
         phone: data.phone || null,
-        guests: parseInt(data.guests),
         dietary_restrictions: data.dietary || null,
         message: data.message || null,
       },
@@ -114,9 +103,7 @@ export default function RSVPSection() {
       setTimeout(() => {
         setFormData({
           name: "",
-          email: "",
           phone: "",
-          guests: "1",
           dietary: "",
           message: "",
         });
@@ -164,8 +151,8 @@ export default function RSVPSection() {
                 <span>Confirmación enviada por WhatsApp</span>
               </div>
               <div className="flex items-center gap-3 text-gray-700">
-                <Mail className="w-5 h-5 text-quince-500" />
-                <span>Te contactaremos para detalles adicionales</span>
+                <Heart className="w-5 h-5 text-quince-500" />
+                <span>Nos contactaremos contigo para coordinar detalles</span>
               </div>
             </div>
           </motion.div>
@@ -232,24 +219,6 @@ export default function RSVPSection() {
                 />
               </div>
 
-              {/* Email */}
-              <div>
-                <label className=" text-gray-700 font-medium mb-2 flex items-center gap-2">
-                  <Mail className="w-5 h-5 text-quince-500" />
-                  Email *
-                </label>
-                <input
-                  type="email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  required
-                  disabled={loading}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-quince-500 focus:border-transparent transition-all disabled:opacity-50"
-                  placeholder="tu@email.com"
-                />
-              </div>
-
               {/* Phone */}
               <div>
                 <label className=" text-gray-700 font-medium mb-2 flex items-center gap-2">
@@ -265,28 +234,6 @@ export default function RSVPSection() {
                   className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-quince-500 focus:border-transparent transition-all disabled:opacity-50"
                   placeholder="+54 11 2776-4823"
                 />
-              </div>
-
-              {/* Number of guests */}
-              <div>
-                <label className=" text-gray-700 font-medium mb-2 flex items-center gap-2">
-                  <Users className="w-5 h-5 text-quince-500" />
-                  Número de Invitados *
-                </label>
-                <select
-                  name="guests"
-                  value={formData.guests}
-                  onChange={handleChange}
-                  required
-                  disabled={loading}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-quince-500 focus:border-transparent transition-all disabled:opacity-50"
-                >
-                  <option value="1">Solo yo</option>
-                  <option value="2">2 personas (yo + acompañante)</option>
-                  <option value="3">3 personas</option>
-                  <option value="4">4 personas</option>
-                  <option value="5">5 personas</option>
-                </select>
               </div>
             </div>
 

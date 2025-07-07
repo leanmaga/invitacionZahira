@@ -26,7 +26,7 @@ export default function LocationSection() {
             Ubicación del Evento
           </h2>
           <p className="text-xl text-gray-600">
-            Un lugar mágico para una noche inolvidable
+            Un lugar mágico para un día inolvidable
           </p>
         </motion.div>
 
