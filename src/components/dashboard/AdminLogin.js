@@ -24,7 +24,7 @@ export default function AdminLogin({
             Panel de Administración
           </h1>
           <p className="text-gray-600">
-            Quinceañera Zahira - Acceso Restringido
+            Mis Quince Años - Zahira - Acceso Restringido
           </p>
         </div>
 
