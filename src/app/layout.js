@@ -20,7 +20,7 @@ export const metadata = {
   openGraph: {
     title: "Zahira – Mis quince años",
     description: "Una celebración mágica ",
-    url: BASE_URL,
+    url: "https://invitacion-zahira.vercel.app/",
     siteName: "Invitación Virtual",
     locale: "es_AR",
     type: "website",
