@@ -87,8 +87,8 @@ export default function SplashScreen({ onEnter }) {
           whileTap={{ scale: 0.95 }}
           onClick={handleClick}
           disabled={clicked}
-          className="font-serif bg-gradient-to-r from-quince-500 to-quince-600 mt-100
-                     text-white px-8 py-4 rounded-full font-semibold text-lg shadow-md"
+          className="font-serif bg-gradient-to-r from-quince-500 to-quince-600 mt-70
+           text-white px-8 py-4 rounded-full font-semibold text-lg shadow-md shimmer-button"
         >
           Descubre la Magia
         </motion.button>

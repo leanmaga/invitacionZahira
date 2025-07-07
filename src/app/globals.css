@@ -45,6 +45,7 @@
 
   --font-family-sans: ui-sans-serif, system-ui, sans-serif;
 }
+
 .font-elegant {
   font-family: var(--font-elegant);
 }
@@ -118,7 +119,9 @@ html {
   animation: float 6s ease-in-out infinite;
 }
 
-/* Sparkle effect */
+/* ========== EFECTOS SHIMMER MEJORADOS ========== */
+
+/* Tu efecto sparkle original (mantenido para compatibilidad) */
 .sparkle {
   position: relative;
   overflow: hidden;
@@ -143,6 +146,136 @@ html {
 @keyframes shimmer {
   0% {
     left: -100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+/* Efecto shimmer básico mejorado */
+.shimmer-button {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.shimmer-button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.4),
+    transparent
+  );
+  transition: left 0.5s ease;
+  animation: shimmer-smooth 2.5s infinite;
+}
+
+@keyframes shimmer-smooth {
+  0% {
+    left: -100%;
+  }
+  50% {
+    left: 100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+.shimmer-button:hover::before {
+  animation-duration: 0.8s;
+}
+
+/* Efecto shimmer intenso */
+.shimmer-intense {
+  position: relative;
+  overflow: hidden;
+}
+
+.shimmer-intense::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.6),
+    rgba(255, 255, 255, 0.8),
+    rgba(255, 255, 255, 0.6),
+    transparent
+  );
+  animation: shimmer-intense 3s infinite;
+}
+
+@keyframes shimmer-intense {
+  0% {
+    left: -50%;
+  }
+  50% {
+    left: 100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+/* Efecto shimmer doble */
+.shimmer-double {
+  position: relative;
+  overflow: hidden;
+}
+
+.shimmer-double::before,
+.shimmer-double::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 30%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.4),
+    transparent
+  );
+}
+
+.shimmer-double::before {
+  animation: shimmer-first 4s infinite;
+}
+
+.shimmer-double::after {
+  animation: shimmer-second 4s infinite 1s;
+}
+
+@keyframes shimmer-first {
+  0% {
+    left: -30%;
+  }
+  25% {
+    left: 100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+@keyframes shimmer-second {
+  0% {
+    left: -30%;
+  }
+  25% {
+    left: 100%;
   }
   100% {
     left: 100%;
