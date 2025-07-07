@@ -13,15 +13,12 @@ const imperial = Beau_Rivage({
   variable: "--font-elegant",
 });
 
-// ✅ Usa TU dominio final (sin / al final)
-const BASE_URL = "https://invitacion-zahira.vercel.app/"; // cambia esto
-
 export const metadata = {
-  title: "Zahira – mis quince años",
+  title: "Zahira – Mis quince años",
   description: "Una celebración mágica ",
 
   openGraph: {
-    title: "Zahira – mis quince añosos",
+    title: "Zahira – Mis quince años",
     description: "Una celebración mágica ",
     url: BASE_URL,
     siteName: "Invitación Virtual",
@@ -29,19 +26,12 @@ export const metadata = {
     type: "website",
     images: [
       {
-        url: `assets/herobg.jpg`, // 🔑 URL absoluta
+        url: `assets/herobg.jpg`,
         width: 1200,
         height: 630,
         alt: "Fondo dorado con destellos y el nombre de Zahira",
       },
     ],
-  },
-
-  twitter: {
-    card: "summary_large_image",
-    title: "Zahira – Quinceañera Invitation",
-    description: "Una celebración mágica – 15 años de Zahira",
-    images: [`${BASE_URL}/herobg.jpg`],
   },
 };
 
