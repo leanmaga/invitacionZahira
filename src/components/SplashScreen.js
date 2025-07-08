@@ -38,7 +38,8 @@ export default function SplashScreen({ onEnter }) {
 
   return (
     <motion.div
-      className="fixed inset-0 z-50 overflow-hidden bg-#FFE8E9"
+      className="fixed inset-0 z-50 overflow-hidden "
+      style={{ backgroundColor: "#FFE8E9" }}
       initial={{ opacity: 1 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0, transition: { duration: 0.6 } }}
