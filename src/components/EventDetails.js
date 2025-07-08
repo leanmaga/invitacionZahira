@@ -36,7 +36,7 @@ export default function EventDetails() {
             Detalles del Evento
           </h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Todo lo que necesitas saber para ser parte de esta celebración única
+            Todo lo que necesitas saber para ser parte de esta celebración
           </p>
         </motion.div>
 
@@ -82,10 +82,6 @@ export default function EventDetails() {
           <h3 className="font-elegant text-3xl font-bold text-quince-600 mb-4">
             ¡Tu presencia es el mejor regalo!
           </h3>
-          <p className="text-gray-700 text-lg">
-            Acompáñanos en este día mágico lleno de música, baile y momentos
-            inolvidables
-          </p>
         </motion.div>
       </div>
     </section>

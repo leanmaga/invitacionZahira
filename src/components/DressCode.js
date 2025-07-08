@@ -23,8 +23,8 @@ export default function DressCode() {
             Código de Vestimenta
           </h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Vístete para brillar en esta día mágico. Tu elegancia complementará
-            la belleza de la celebración.
+            Vístete para brillar tu elegancia complementará la belleza de la
+            celebración.
           </p>
         </motion.div>
 

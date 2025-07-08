@@ -55,7 +55,7 @@ export default function CountdownSection() {
           <h2 className="font-serif text-4xl md:text-5xl font-bold text-gray-800 mb-4">
             Cuenta Regresiva
           </h2>
-          <p className="text-xl text-gray-600">¡La magia está por comenzar!</p>
+          <p className="text-xl text-gray-600">¡La fiesta está por comenzar!</p>
         </motion.div>
 
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
@@ -84,18 +84,6 @@ export default function CountdownSection() {
             </motion.div>
           ))}
         </div>
-
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.5 }}
-          viewport={{ once: true }}
-          className="mt-12 p-6 glass rounded-2xl max-w-2xl mx-auto"
-        >
-          <p className="text-lg text-gray-700 font-medium">
-            Cada momento cuenta cuando se trata de crear recuerdos mágicos
-          </p>
-        </motion.div>
       </div>
     </section>
   );

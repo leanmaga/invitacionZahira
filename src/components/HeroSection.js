@@ -96,7 +96,7 @@ export default function HeroSection() {
             Mis Quince Años
           </h2>
           <p className="text-xl md:text-2xl text-gray-600 font-light">
-            Una celebración mágica que no puedes perderte
+            Una celebración especial que no puedes perderte
           </p>
         </motion.div>
 

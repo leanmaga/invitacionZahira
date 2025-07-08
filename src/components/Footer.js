@@ -49,7 +49,7 @@ export default function Footer() {
           </h2>
           <p className="text-xl text-gray-300 max-w-2xl mx-auto">
             Gracias por ser parte de este momento tan especial en mi vida. Tu
-            presencia hará que esta día sea verdaderamente mágico.
+            presencia hará que esta día sea verdaderamente increible.
           </p>
         </motion.div>
 

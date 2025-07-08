@@ -25,9 +25,6 @@ export default function LocationSection() {
           <h2 className="font-serif text-4xl md:text-5xl font-bold text-gray-800 mb-4">
             Ubicación del Evento
           </h2>
-          <p className="text-xl text-gray-600">
-            Un lugar mágico para un día inolvidable
-          </p>
         </motion.div>
 
         <div className="grid lg:grid-cols-2 gap-12 items-center">
