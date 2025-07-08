@@ -113,7 +113,6 @@ const MusicPlayer = ({
 const navItems = [
   { name: "Inicio", href: "#hero" },
   { name: "Detalles", href: "#details" },
-  { name: "Galería", href: "#gallery" },
   { name: "Dress Code", href: "#dresscode" },
   { name: "Ubicación", href: "#location" },
   { name: "Música", href: "#music" },
