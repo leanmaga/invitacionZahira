@@ -38,7 +38,7 @@ export default function SplashScreen({ onEnter }) {
 
   return (
     <motion.div
-      className="fixed inset-0 z-50 overflow-hidden bg-rose-50"
+      className="fixed inset-0 z-50 overflow-hidden bg-#FFE8E9"
       initial={{ opacity: 1 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0, transition: { duration: 0.6 } }}
@@ -49,7 +49,7 @@ export default function SplashScreen({ onEnter }) {
           src="/assets/herobg.jpg"
           alt="Fondo mágico"
           fill
-          className="object-cover sm:object-contain" // Cover en móvil (hasta sm), contain en tablet+
+          className="object-cover sm:object-contain"
           priority
         />
         <div className="absolute inset-0 overflow-hidden pointer-events-none z-20">
