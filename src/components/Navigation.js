@@ -4,10 +4,9 @@ import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Music } from "lucide-react";
 
-// Componente del reproductor de música (optimizado para memoria)
 const MusicPlayer = ({
   audioSrc = "/musica.mp3",
-  autoplay = false, // Cambiar a false para reducir carga inicial
+  autoplay = false,
   className = "",
 }) => {
   const [isPlaying, setIsPlaying] = useState(false);
