@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Music } from "lucide-react";
 
 const MusicPlayer = ({
-  audioSrc = "/musica.mp3",
+  audioSrc = "/assets/AThousandyears.mp3",
   autoplay = false,
   className = "",
 }) => {
