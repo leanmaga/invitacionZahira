@@ -1,113 +1,9 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Music } from "lucide-react";
-
-const MusicPlayer = ({
-  audioSrc = "/assets/AThousandyears.mp3",
-  autoplay = false,
-  className = "",
-}) => {
-  const [isPlaying, setIsPlaying] = useState(false);
-  const [isLoading, setIsLoading] = useState(true);
-  const [error, setError] = useState(false);
-  const audioRef = useRef(null);
-
-  useEffect(() => {
-    const audio = audioRef.current;
-    if (!audio) return;
-
-    const handleLoadedData = () => {
-      setIsLoading(false);
-      if (autoplay) {
-        audio
-          .play()
-          .then(() => {
-            setIsPlaying(true);
-          })
-          .catch((err) => {
-            console.log("Autoplay bloqueado por el navegador:", err);
-            setIsPlaying(false);
-          });
-      }
-    };
-
-    const handleError = () => {
-      setError(true);
-      setIsLoading(false);
-      setIsPlaying(false);
-    };
-
-    const handlePlay = () => setIsPlaying(true);
-    const handlePause = () => setIsPlaying(false);
-    const handleEnded = () => setIsPlaying(false);
-
-    // Usar eventos pasivos para mejor performance
-    const options = { passive: true };
-    audio.addEventListener("loadeddata", handleLoadedData, options);
-    audio.addEventListener("error", handleError, options);
-    audio.addEventListener("play", handlePlay, options);
-    audio.addEventListener("pause", handlePause, options);
-    audio.addEventListener("ended", handleEnded, options);
-
-    return () => {
-      audio.removeEventListener("loadeddata", handleLoadedData);
-      audio.removeEventListener("error", handleError);
-      audio.removeEventListener("play", handlePlay);
-      audio.removeEventListener("pause", handlePause);
-      audio.removeEventListener("ended", handleEnded);
-    };
-  }, [autoplay]);
-
-  const togglePlayPause = async () => {
-    const audio = audioRef.current;
-    if (!audio || isLoading) return;
-
-    try {
-      if (isPlaying) {
-        audio.pause();
-      } else {
-        await audio.play();
-      }
-    } catch (err) {
-      console.error("Error al reproducir audio:", err);
-      setError(true);
-      setIsPlaying(false);
-    }
-  };
-
-  if (error) {
-    return (
-      <div
-        className={`inline-flex items-center px-2 py-1 bg-red-100 text-red-800 rounded text-xs ${className}`}
-      >
-        <Music size={14} className="mr-1" />
-        <span className="text-xs">Error</span>
-      </div>
-    );
-  }
-
-  return (
-    <div className={`inline-flex items-center gap-2 ${className}`}>
-      <audio ref={audioRef} src={audioSrc} preload="auto" loop>
-        Tu navegador no soporta el elemento audio.
-      </audio>
-
-      <motion.button
-        whileHover={{ scale: 1.05 }}
-        whileTap={{ scale: 0.95 }}
-        onClick={togglePlayPause}
-        disabled={isLoading}
-        className="flex items-center gap-1 px-3 py-1.5 bg-quince-500 hover:bg-quince-600 text-white text-xs font-medium rounded-full transition-all duration-200 disabled:opacity-60 disabled:cursor-not-allowed"
-        aria-label={isPlaying ? "Pausar música" : "Reproducir música"}
-      >
-        <Music size={12} />
-        {isLoading ? "..." : isPlaying ? "PAUSE" : "PLAY"}
-      </motion.button>
-    </div>
-  );
-};
+import MusicPlayer from "./MusicPlayer"; // Importar el nuevo componente
 
 const navItems = [
   { name: "Inicio", href: "#hero" },
@@ -143,7 +39,6 @@ export default function Navigation() {
       document.body.style.overflow = "unset";
     }
 
-    // Cleanup
     return () => {
       document.body.style.overflow = "unset";
     };
@@ -166,7 +61,7 @@ export default function Navigation() {
             {/* Logo */}
             <motion.div
               whileHover={{ scale: 1.05 }}
-              className="font-elegant text-xl sm:text-2xl md:text-3xl font-bold text-quince-600 flex-shrink-0"
+              className="font-elegant text-xl sm:text-2xl md:text-3xl font-bold text-purple-600 flex-shrink-0"
             >
               Zahira
             </motion.div>
@@ -180,8 +75,11 @@ export default function Navigation() {
                   initial={{ opacity: 0, y: -20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: index * 0.1 }}
-                  whileHover={{ scale: 1.05, color: "var(--color-quince-500)" }}
-                  className="text-gray-700 hover:text-quince-500 font-medium transition-colors text-sm lg:text-base whitespace-nowrap"
+                  whileHover={{
+                    scale: 1.05,
+                    color: "var(--color-purple-500)",
+                  }}
+                  className="text-gray-700 hover:text-purple-500 font-medium transition-colors text-sm lg:text-base whitespace-nowrap px-3 py-2"
                 >
                   {item.name}
                 </motion.a>
@@ -194,19 +92,23 @@ export default function Navigation() {
                 transition={{ delay: navItems.length * 0.1 }}
                 className="ml-2 lg:ml-4"
               >
-                <MusicPlayer />
+                {/* AHORA SOLO UNA INSTANCIA - todas estarán sincronizadas */}
+                <MusicPlayer showVolumeControl={true} />
               </motion.div>
             </div>
 
             {/* Mobile Menu Button */}
             <div className="md:hidden flex items-center gap-2">
-              {/* Reproductor de música en móvil (junto al botón) */}
-              <MusicPlayer className="mr-1" />
+              {/* Reproductor de música en móvil */}
+              <div>
+                {/* ESTA instancia también estará sincronizada */}
+                <MusicPlayer showVolumeControl={false} />
+              </div>
 
               <motion.button
                 whileTap={{ scale: 0.95 }}
                 onClick={() => setIsOpen(!isOpen)}
-                className="text-gray-700 hover:text-quince-500 p-2 rounded-lg hover:bg-quince-50 transition-colors"
+                className="text-gray-700 hover:text-purple-500 p-2 rounded-lg hover:bg-purple-50 transition-colors"
               >
                 {isOpen ? <X size={24} /> : <Menu size={24} />}
               </motion.button>
@@ -225,7 +127,7 @@ export default function Navigation() {
                 exit={{ opacity: 0 }}
                 onClick={() => setIsOpen(false)}
                 className="md:hidden fixed inset-0 bg-black/20 backdrop-blur-sm"
-                style={{ top: "64px" }} // Altura del navbar
+                style={{ top: "64px" }}
               />
 
               {/* Menu Panel */}
@@ -245,7 +147,7 @@ export default function Navigation() {
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ delay: index * 0.1 }}
                       onClick={handleLinkClick}
-                      className="block py-3 px-3 text-gray-700 hover:text-quince-500 hover:bg-quince-50 font-medium rounded-lg transition-all"
+                      className="block py-3 px-3 text-gray-700 hover:text-purple-500 hover:bg-purple-50 font-medium rounded-lg transition-all"
                     >
                       {item.name}
                     </motion.a>
@@ -259,11 +161,24 @@ export default function Navigation() {
                     className="pt-2 mt-2 border-t border-gray-200"
                   >
                     <div className="py-2 px-3 text-gray-500 text-sm font-medium flex items-center gap-2">
-                      <Music size={16} />
+                      <motion.div
+                        animate={{ rotate: [0, 360] }}
+                        transition={{
+                          duration: 3,
+                          repeat: Infinity,
+                          ease: "linear",
+                        }}
+                      >
+                        <Music size={16} />
+                      </motion.div>
                       Control de Música
                     </div>
                     <div className="px-3 py-2">
-                      <MusicPlayer className="w-full justify-center" />
+                      {/* Y ESTA instancia TAMBIÉN estará sincronizada */}
+                      <MusicPlayer
+                        className="w-full justify-center"
+                        showVolumeControl={true}
+                      />
                     </div>
                   </motion.div>
                 </div>
@@ -278,5 +193,3 @@ export default function Navigation() {
     </>
   );
 }
-
-export { MusicPlayer };
